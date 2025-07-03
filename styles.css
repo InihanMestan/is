@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Nunito', 'Segoe UI', Arial, sans-serif;
+    background: #B6D5F0;
+    color: #222;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4C5863;
+    color: #fff;
+    padding: 0.5rem 2rem;
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    cursor: pointer;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.nav-links li.active, .nav-links li:hover {
+    background: #7C91A3;
+    color: #fff;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #ABC8E2;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(76,88,99,0.08);
+    padding: 2rem;
+}
+
+.barcode-section {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+    align-items: flex-end;
+}
+
+#barcode-input {
+    flex: 1 1 0;
+    padding: 1rem;
+    border: 1.5px solid #99B3C9;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: #F7FAFC;
+    min-width: 0;
+}
+
+#scan-btn {
+    background: #7C91A3;
+    border: none;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(76,88,99,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-left: 0.2rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+#scan-btn:active, #scan-btn:focus {
+    background: #4C5863;
+    outline: none;
+    box-shadow: 0 0 0 2px #ABC8E2;
+}
+
+#scan-btn svg {
+    display: block;
+}
+
+.product-info {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(124,145,163,0.08);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    color: #222;
+}
+
+.product-info h2 {
+    margin-top: 0;
+    color: #4C5863;
+}
+
+.product-info .price {
+    color: #7C91A3;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.product-info .ids {
+    margin: 0.5rem 0 1rem 0;
+    color: #99B3C9;
+    font-size: 0.98rem;
+}
+
+.product-info .desc {
+    color: #4C5863;
+    font-size: 1.05rem;
+}
+
+.no-product {
+    color: #fff;
+    background: #7C91A3;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+#qr-reader {
+    margin: 1rem auto;
+    max-width: 350px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(76,88,99,0.10);
+    padding: 0.5rem 0.5rem 0.2rem 0.5rem;
+    z-index: 10;
+}
+
+@media (max-width: 700px) {
+    main {
+        max-width: 98vw;
+        padding: 1rem 0.5rem;
+    }
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.7rem 0.5rem;
+    }
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    .barcode-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    #scan-btn {
+        align-self: flex-end;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    main {
+        padding: 0.5rem 0.1rem;
+    }
+    .product-info {
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #qr-reader {
+        max-width: 98vw;
+        padding: 0.2rem 0.1rem 0.1rem 0.1rem;
+    }
+} 

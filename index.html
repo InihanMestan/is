@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационна система</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">IS</div>
+        <ul class="nav-links">
+            <li class="active">Начало</li>
+            <li>Продукти</li>
+        </ul>
+    </nav>
+    <main>
+        <section class="barcode-section">
+            <label for="barcode-input">Въведи или сканирай баркод:</label>
+            <input type="text" id="barcode-input" placeholder="Баркод...">
+            <button id="scan-btn" aria-label="Сканирай">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+            </button>
+        </section>
+        <div id="qr-reader" class="hidden"></div>
+        <section id="product-info" class="product-info hidden">
+            <!-- Тук ще се показва информацията за продукта -->
+        </section>
+        <section id="no-product" class="no-product hidden">
+            Няма намерен продукт с този баркод.
+        </section>
+    </main>
+    <script src="https://unpkg.com/html5-qrcode@2.3.10/html5-qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
