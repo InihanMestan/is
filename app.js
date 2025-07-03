@@ -64,9 +64,19 @@ function handleScan() {
     }
 }
 
+function showCameraError(message) {
+    qrReader.innerHTML = `<div style='color:#b00; text-align:center; padding:1em;'>${message}</div>`;
+    setTimeout(() => {
+        qrReader.classList.add('hidden');
+        qrReader.innerHTML = '';
+        qrScannerActive = false;
+    }, 3500);
+}
+
 function startScanner() {
     if (qrScannerActive) return;
     qrReader.classList.remove('hidden');
+    qrReader.innerHTML = '';
     qrScannerActive = true;
     const html5QrCode = new Html5Qrcode("qr-reader");
     html5QrCode.start(
@@ -87,9 +97,7 @@ function startScanner() {
             // Може да се логва грешка, но не е задължително
         }
     ).catch(err => {
-        qrReader.classList.add('hidden');
-        qrScannerActive = false;
-        alert('Неуспешно стартиране на камерата!');
+        showCameraError('Няма достъп до камерата или тя не е налична! Разрешете достъп до камерата от настройките на браузъра.');
     });
 }
 
